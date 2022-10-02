@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC =  segue.destination as? WelcomeViewController else { return }
+        welcomeVC.welcomeValue = userName.text
+    }
 
 }

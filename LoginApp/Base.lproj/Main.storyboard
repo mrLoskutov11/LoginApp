@@ -95,6 +95,9 @@
                                 <rect key="frame" x="16" y="688.66666666666663" width="398" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                                <connections>
+                                    <action selector="logOutButton" destination="I48-nK-FGh" eventType="touchUpInside" id="sji-FA-9Tu"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-BA-Mn0">
                                 <rect key="frame" x="16" y="229" width="398" height="133.66666666666663"/>
@@ -125,6 +128,9 @@
                             <constraint firstItem="Jx0-BA-Mn0" firstAttribute="top" secondItem="VBz-ZP-5QW" secondAttribute="top" constant="170" id="hx1-XG-MTz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="welcomeLableOutlet" destination="vqL-09-vg9" id="nor-3y-Sde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eab-DC-wTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
