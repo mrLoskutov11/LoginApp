@@ -25,6 +25,12 @@ class ViewController: UIViewController {
         welcomeVC.welcomeValue = userName.text
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            view.endEditing(true)
+        }
+        super .touchesBegan(touches, with: event)
+    }
     
     @IBAction func logInTest() {
         if userName.text == "1111" && password.text == "1111" {

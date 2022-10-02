@@ -16,7 +16,6 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         welcomeLableOutlet.text = "Welcome, \(welcomeValue ?? " ")!"
-        //welcomeValue = "Welcome, \(welcomeValue ?? "User")!"
     }
     
     @IBAction func logOutButton() {
