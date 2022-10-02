@@ -97,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="GFh-U4-yVz" customClass="GradientView" customModule="LoginApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <rect key="frame" x="0.0" y="-1" width="429" height="933"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -113,10 +113,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oll-KE-e7Y">
-                                <rect key="frame" x="16" y="688.66666666666663" width="398" height="34.333333333333371"/>
+                                <rect key="frame" x="100" y="688.66666666666663" width="230" height="34.333333333333371"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="logOutButton" destination="I48-nK-FGh" eventType="touchUpInside" id="sji-FA-9Tu"/>
                                     <segue destination="Vx4-Ar-YaC" kind="unwind" unwindAction="unwindFor:" id="Dom-Hn-rqB"/>
@@ -143,10 +147,10 @@
                         <viewLayoutGuide key="safeArea" id="VBz-ZP-5QW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Oll-KE-e7Y" firstAttribute="leading" secondItem="VBz-ZP-5QW" secondAttribute="leading" constant="16" id="3Jq-47-ynA"/>
+                            <constraint firstItem="Oll-KE-e7Y" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VBz-ZP-5QW" secondAttribute="leading" constant="100" id="3Jq-47-ynA"/>
                             <constraint firstItem="Jx0-BA-Mn0" firstAttribute="leading" secondItem="VBz-ZP-5QW" secondAttribute="leading" constant="16" id="QKA-kQ-Xyf"/>
                             <constraint firstItem="VBz-ZP-5QW" firstAttribute="bottom" secondItem="Oll-KE-e7Y" secondAttribute="bottom" constant="175" id="Zuo-Lf-AVr"/>
-                            <constraint firstItem="VBz-ZP-5QW" firstAttribute="trailing" secondItem="Oll-KE-e7Y" secondAttribute="trailing" constant="16" id="bpX-vR-bmG"/>
+                            <constraint firstItem="VBz-ZP-5QW" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Oll-KE-e7Y" secondAttribute="trailing" constant="100" id="bpX-vR-bmG"/>
                             <constraint firstItem="VBz-ZP-5QW" firstAttribute="trailing" secondItem="Jx0-BA-Mn0" secondAttribute="trailing" constant="16" id="cnS-n0-OYY"/>
                             <constraint firstItem="Jx0-BA-Mn0" firstAttribute="top" secondItem="VBz-ZP-5QW" secondAttribute="top" constant="170" id="hx1-XG-MTz"/>
                         </constraints>
@@ -164,6 +168,9 @@
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
