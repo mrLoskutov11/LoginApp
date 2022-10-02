@@ -5,12 +5,6 @@
 //  Created by Антон Лоскутов on 01.10.2022.
 //
 
-/*if (userName.text == "1111") && password.text == "1111" {
-    print("пароль правильный")
-} else {
-    print("повторите попытку")
-}*/
-
 
 import UIKit
 
@@ -24,9 +18,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC =  segue.destination as? WelcomeViewController else { return }
+        guard let welcomeVC =  segue.destination as? WelcomeViewController else {
+            return
+        }
         welcomeVC.welcomeValue = userName.text
     }
     
@@ -44,20 +39,6 @@ class ViewController: UIViewController {
         password.text = nil
     }
     
-    @IBAction func allertLogIn() {
-        let alert = UIAlertController(
-            title: "Error",
-            message: "Username or password entered incorrectly",
-            preferredStyle: .alert
-        )
-        let okBtn = UIAlertAction(
-            title: "OK",
-            style: .default
-        )
-        alert.addAction(okBtn)
-        present(alert, animated: true)
-        password.text = nil
-    }
     @IBAction func alertUserName() {
         let alert = UIAlertController(
             title: "error 🥲",
@@ -80,6 +61,21 @@ class ViewController: UIViewController {
         let okBtn = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okBtn)
         present(alert, animated: true)
+    }
+    
+    private func allertLogIn() {
+        let alert = UIAlertController(
+            title: "Error",
+            message: "Username or password entered incorrectly",
+            preferredStyle: .alert
+        )
+        let okBtn = UIAlertAction(
+            title: "OK",
+            style: .default
+        )
+        alert.addAction(okBtn)
+        present(alert, animated: true)
+        password.text = nil
     }
     
     
