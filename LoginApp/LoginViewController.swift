@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     @IBAction func alertUserName() {
         let alert = UIAlertController(
-            title: "error 🥲",
+            title: "Try this name",
             message: "You name 1111",
             preferredStyle: .alert
         )
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     }
     @IBAction func alertPassword() {
         let alert = UIAlertController(
-            title: "error 🥲",
+            title: "Try this password",
             message: "You password 1111",
             preferredStyle: .alert
         )
