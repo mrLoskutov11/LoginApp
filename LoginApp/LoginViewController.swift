@@ -23,5 +23,8 @@ class ViewController: UIViewController {
         guard let welcomeVC =  segue.destination as? WelcomeViewController else { return }
         welcomeVC.welcomeValue = userName.text
     }
-
+    @IBAction func unwind(for segue: UIStoryboardSegue ) {
+        userName.text = nil
+        password.text = nil
+    }
 }
