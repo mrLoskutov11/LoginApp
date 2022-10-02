@@ -5,6 +5,13 @@
 //  Created by Антон Лоскутов on 01.10.2022.
 //
 
+/*if (userName.text == "1111") && password.text == "1111" {
+    print("пароль правильный")
+} else {
+    print("повторите попытку")
+}*/
+
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,11 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var logInButton: UIButton!
  
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC =  segue.destination as? WelcomeViewController else { return }
@@ -25,19 +31,52 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func logInTest() {
+        if userName.text == "1111" && password.text == "1111" {
+            viewDidLoad()
+        } else {
+            allertLogIn()
+        }
+    }
+    
     @IBAction func unwind(for segue: UIStoryboardSegue ) {
         userName.text = nil
         password.text = nil
     }
     
+    @IBAction func allertLogIn() {
+        let alert = UIAlertController(
+            title: "Error",
+            message: "Username or password entered incorrectly",
+            preferredStyle: .alert
+        )
+        let okBtn = UIAlertAction(
+            title: "OK",
+            style: .default
+        )
+        alert.addAction(okBtn)
+        present(alert, animated: true)
+        password.text = nil
+    }
     @IBAction func alertUserName() {
-        let alert = UIAlertController(title: "User Name", message: "1111", preferredStyle: .alert)
-        let okBtn = UIAlertAction(title: "OK", style: .default)
+        let alert = UIAlertController(
+            title: "error 🥲",
+            message: "You name 1111",
+            preferredStyle: .alert
+        )
+        let okBtn = UIAlertAction(
+            title: "OK",
+            style: .default
+        )
         alert.addAction(okBtn)
         present(alert, animated: true)
     }
     @IBAction func alertPassword() {
-        let alert = UIAlertController(title: "Password", message: "1111", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "error 🥲",
+            message: "You password 1111",
+            preferredStyle: .alert
+        )
         let okBtn = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okBtn)
         present(alert, animated: true)
