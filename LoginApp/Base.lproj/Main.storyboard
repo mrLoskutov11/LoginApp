@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XHP-ui-P4K">
-                                <rect key="frame" x="25" y="279" width="380" height="142.33333333333337"/>
+                                <rect key="frame" x="25" y="209" width="380" height="142.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H9i-hJ-vxP">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
@@ -33,11 +33,14 @@
                                         <rect key="frame" x="0.0" y="108" width="380" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Log In"/>
+                                        <connections>
+                                            <segue destination="I48-nK-FGh" kind="presentation" modalPresentationStyle="fullScreen" id="kna-nw-MUD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qf8-pE-GYI">
-                                <rect key="frame" x="16" y="457.33333333333331" width="398" height="28.333333333333314"/>
+                                <rect key="frame" x="16" y="387.33333333333331" width="398" height="28.333333333333314"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKG-Ck-vLa">
                                         <rect key="frame" x="0.0" y="0.0" width="199" height="28.333333333333332"/>
@@ -64,9 +67,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qf8-pE-GYI" secondAttribute="trailing" constant="16" id="iW5-Cn-IkL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XHP-ui-P4K" secondAttribute="trailing" constant="25" id="jHb-E1-QcA"/>
                             <constraint firstItem="XHP-ui-P4K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="roO-pW-Y0d"/>
-                            <constraint firstItem="XHP-ui-P4K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="220" id="ukn-iK-zwT"/>
+                            <constraint firstItem="XHP-ui-P4K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="ukn-iK-zwT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JBp-jH-xfm"/>
                     <connections>
                         <outlet property="forgotPasswordButton" destination="Tpg-0D-2aJ" id="4BO-Gy-eXe"/>
                         <outlet property="forgotUserNameButton" destination="GKG-Ck-vLa" id="KzN-yV-Id4"/>
@@ -77,7 +81,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="-247"/>
+            <point key="canvasLocation" x="1173.4883720930231" y="-247.21030042918457"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="Upp-l4-S7L">
+            <objects>
+                <viewController id="I48-nK-FGh" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gdk-ll-DFS">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oll-KE-e7Y">
+                                <rect key="frame" x="16" y="688.66666666666663" width="398" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-BA-Mn0">
+                                <rect key="frame" x="16" y="229" width="398" height="133.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqL-09-vg9">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="33.666666666666664"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙋‍♂️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWP-WE-4RT">
+                                        <rect key="frame" x="0.0" y="73.666666666666686" width="398" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VBz-ZP-5QW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oll-KE-e7Y" firstAttribute="leading" secondItem="VBz-ZP-5QW" secondAttribute="leading" constant="16" id="3Jq-47-ynA"/>
+                            <constraint firstItem="Jx0-BA-Mn0" firstAttribute="leading" secondItem="VBz-ZP-5QW" secondAttribute="leading" constant="16" id="QKA-kQ-Xyf"/>
+                            <constraint firstItem="VBz-ZP-5QW" firstAttribute="bottom" secondItem="Oll-KE-e7Y" secondAttribute="bottom" constant="175" id="Zuo-Lf-AVr"/>
+                            <constraint firstItem="VBz-ZP-5QW" firstAttribute="trailing" secondItem="Oll-KE-e7Y" secondAttribute="trailing" constant="16" id="bpX-vR-bmG"/>
+                            <constraint firstItem="VBz-ZP-5QW" firstAttribute="trailing" secondItem="Jx0-BA-Mn0" secondAttribute="trailing" constant="16" id="cnS-n0-OYY"/>
+                            <constraint firstItem="Jx0-BA-Mn0" firstAttribute="top" secondItem="VBz-ZP-5QW" secondAttribute="top" constant="170" id="hx1-XG-MTz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eab-DC-wTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.6511627906978" y="-247.21030042918457"/>
         </scene>
     </scenes>
     <resources>
