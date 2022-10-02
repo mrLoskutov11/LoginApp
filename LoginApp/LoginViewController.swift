@@ -64,7 +64,9 @@ class ViewController: UIViewController {
             message: "You password 1111",
             preferredStyle: .alert
         )
-        let okBtn = UIAlertAction(title: "OK", style: .default)
+        let okBtn = UIAlertAction(
+            title: "OK",
+            style: .default)
         alert.addAction(okBtn)
         present(alert, animated: true)
     }
@@ -83,6 +85,4 @@ class ViewController: UIViewController {
         present(alert, animated: true)
         password.text = nil
     }
-    
-    
 }
