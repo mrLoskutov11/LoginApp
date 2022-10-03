@@ -10,19 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var userName: UITextField!
-    @IBOutlet var password: UITextField!
-    @IBOutlet var logInButton: UIButton!
+    let username = "1111"
+    let password = "1111"
+    
+    @IBOutlet var usernameOutlet: UITextField!
+    @IBOutlet var passwordOutlet: UITextField!
  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC =  segue.destination as? WelcomeViewController else {
             return
         }
-        welcomeVC.welcomeValue = userName.text
+        welcomeVC.welcomeValue = usernameOutlet.text
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logInTest() {
-        if userName.text == "1111" && password.text == "1111" {
+        if usernameOutlet.text == username && passwordOutlet.text == password {
             viewDidLoad()
         } else {
             allertLogIn()
@@ -41,14 +39,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue ) {
-        userName.text = nil
-        password.text = nil
+        usernameOutlet.text = nil
+        passwordOutlet.text = nil
     }
     
     @IBAction func alertUserName() {
         let alert = UIAlertController(
             title: "Try this name",
-            message: "You name 1111",
+            message: "You name \(username)",
             preferredStyle: .alert
         )
         let okBtn = UIAlertAction(
@@ -61,7 +59,7 @@ class ViewController: UIViewController {
     @IBAction func alertPassword() {
         let alert = UIAlertController(
             title: "Try this password",
-            message: "You password 1111",
+            message: "You password \(password)",
             preferredStyle: .alert
         )
         let okBtn = UIAlertAction(
@@ -83,6 +81,6 @@ class ViewController: UIViewController {
         )
         alert.addAction(okBtn)
         present(alert, animated: true)
-        password.text = nil
+        passwordOutlet.text = nil
     }
 }
